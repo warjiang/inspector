@@ -82,6 +82,9 @@ const getHttpHeaders = (
 
 const app = express();
 app.use(cors());
+if(process.env.STATIC_PATH) {
+  app.use(express.static(process.env.STATIC_PATH));
+}
 app.use((req, res, next) => {
   res.header("Access-Control-Expose-Headers", "mcp-session-id");
   next();
