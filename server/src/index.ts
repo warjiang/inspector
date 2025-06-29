@@ -82,7 +82,7 @@ const getHttpHeaders = (
 
 const app = express();
 app.use(cors());
-if(process.env.STATIC_PATH) {
+if (process.env.STATIC_PATH) {
   app.use(express.static(process.env.STATIC_PATH));
 }
 app.use((req, res, next) => {
